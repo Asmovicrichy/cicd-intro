@@ -1,7 +1,7 @@
 {
     "apps": [
         {
-            "name": "api-dev",
+            "name": "api-prod",
             "script": "npm",
             "args" : "start"
         }
