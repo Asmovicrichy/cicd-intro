@@ -14,17 +14,16 @@ jobs:
       uses: appleboy/ssh-action@master
       with:
         host: ${{ secrets.DEPLOY_HOST }}
-        username: ${{ secrets.DEPLOY_STAGING_USER }}
-        key: ${{ secrets.SSH_PRIVATE_KEY}}
+        username: ${{ secrets.DEPLOY_PROD_USER }}
+        password: ${{ secrets.SSH_PASSWORD}}
         port: ${{ secrets.DEPLOY_PORT }}
-        passphrase: ${{ secrets.DEPLOY_PASSPHRASE }}
         script: |
-          cd node-proxy
+          cd cicd-intro
           git stash
-          git checkout staging
-          git pull origin staging
+          git checkout main
+          git pull origin main
           export NVM_DIR=~/.nvm
           source ~/.nvm/nvm.sh
           nvm use 18
           npm i
-          pm2 restart app-staging-start.json --time --watch false
+          pm2 restart app-prod-start.json --time --watch false
