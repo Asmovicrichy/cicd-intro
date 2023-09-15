@@ -1,4 +1,4 @@
-name: CI/CD Learning Staging
+name: CI/CD Learning Prod
 
 on:
   push:
