@@ -10,4 +10,8 @@ export class AppService {
   getCountry(): string {
     return 'I am from Nigeria, Ogun state to be precise.';
   }
+
+  getBio(): string {
+    return 'My name is Ibrahim Asogba, a graduate of Olabisi Onabanjo University. I am Software engineer with over 6 years experience.';
+  }
 }

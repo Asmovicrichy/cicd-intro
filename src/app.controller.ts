@@ -1,4 +1,5 @@
 import { Controller, Get } from '@nestjs/common';
+import { Request, Response } from 'express';
 import { AppService } from './app.service';
 
 @Controller()
@@ -13,5 +14,10 @@ export class AppController {
   @Get('/country')
   getCountry(): string {
     return this.appService.getCountry();
+  }
+
+  @Get('/bio')
+  getBio(): string {
+    return this.appService.getBio();
   }
 }
